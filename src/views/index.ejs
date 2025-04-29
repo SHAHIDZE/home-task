@@ -1,0 +1,13 @@
+<h1>Todo List</h1>
+<a href="/todos/new">New Todo</a>
+<ul>
+  <% todos.forEach(todo => { %>
+    <li>
+      <strong><%= todo.todo_title %></strong> - <%= todo.todo_desc %> - <%= todo.is_complete ? '✅' : '❌' %>
+      (<a href="/todos/<%= todo.id %>/edit">Edit</a>)
+      <form action="/todos/<%= todo.id %>/delete" method="POST" style="display:inline;">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

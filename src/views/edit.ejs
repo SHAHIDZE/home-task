@@ -1,0 +1,7 @@
+<h1>Edit Todo</h1>
+<form method="POST" action="/todos/<%= todo.id %>/update">
+  <input name="todo_title" value="<%= todo.todo_title %>" required />
+  <input name="todo_desc" value="<%= todo.todo_desc %>" required />
+  <label><input type="checkbox" name="is_complete" <%= todo.is_complete ? 'checked' : '' %> /> Completed</label>
+  <button type="submit">Update</button>
+</form>
